@@ -1,6 +1,7 @@
 # tldrbot_reddit
 A bot for creating a tldr; for news article shared on reddit
 
+The bot is capable of minimizing the article by one tenth of its content
 
 For processing of paragraphs: https://stackabuse.com/text-summarization-with-nltk-in-python/
 For learning about the reddit API: https://praw.readthedocs.io/en/latest/tutorials/refresh_token.html
