@@ -7,8 +7,8 @@ Created on Thu Nov 28 02:47:45 2019
 import praw
 import pandas as pd
 import webbrowser as wb
-reddit = praw.Reddit(client_id='a7i2quE6wfq1gw', client_secret="KDQ0qoZ5ickelTZmINTopa5THro",
-                     username='stan3098', password='manrat0230',user_agent='LMGTFY (by /u/stan3098)')
+reddit = praw.Reddit(client_id='*enter you id*', client_secret="*enter you secret*",
+                     username='*enter you email*', password='*enter you pwd*',user_agent='')
 
 subreddit = reddit.subreddit("stan_com")
 
