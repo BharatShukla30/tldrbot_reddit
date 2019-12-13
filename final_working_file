@@ -12,11 +12,13 @@ reddit = praw.Reddit(client_id='*enter you id*', client_secret="*enter you secre
 
 subreddit = reddit.subreddit("stan_com")
 
-for submission in subreddit.hot(limit=1):
+subreddit = reddit.subreddit("stan_com")
+
+for submission in subreddit.new(limit=1):
     print("Title: ", submission.title)
     print("Text: ", submission.selftext)
     print("Score: ", submission.score)
-    print("URL: ",submission.url)
+    
 #wb.open(submission.url)
     
     
@@ -28,13 +30,6 @@ URL = submission.url
 r = requests.get(URL).text
 
 soup = BeautifulSoup(r,features="lxml") 
-print(soup.prettify())
-
-
-# Get headline
-headline = soup.find('h1').get_text()
-print(headline)
-
 
 # Get text from all <p> tags.
 p_tags = soup.find_all('p')
@@ -48,8 +43,8 @@ sentence_list = [sentence for sentence in p_tags_text if not '\n' in sentence]
 sentence_list = [sentence for sentence in sentence_list if '.' in sentence]
 # Combine list items into string.
 article = ' '.join(sentence_list)
-
-summary = summarize(article, ratio=0.1)
-
-print("Summary:\n",summary)
-
+#
+summary = summarize(article, ratio=0.05)
+#print (summary)
+if submission.reply("This is the best tldr I could make:\n"+summary):
+    print("done")
